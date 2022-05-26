@@ -32,4 +32,10 @@ public class MoedaService {
         return moedaRepository.save(new MoedaModel(vo)).to();
     }
 
+    public Moeda findBySimbolo(String simbolo){
+        return moedaRepository.findBySimbolo(simbolo)
+                              .map(MoedaModel::to)
+                               .orElse(null);
+    }
+
 }
