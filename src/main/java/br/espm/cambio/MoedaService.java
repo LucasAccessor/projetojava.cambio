@@ -45,7 +45,7 @@ public class MoedaService {
     }
 
     public void deleteById(UUID id){  //bUsCa PoR iD
-        moedaRepository.deleteById(id);//.toString())
+        moedaRepository.deleteById(id.toString());//.toString())
                               //.map(MoedaModel::to)
                                //.orElse(null);
     }

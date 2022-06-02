@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "cotacao")
@@ -20,6 +22,7 @@ public class CotacaoModel {
     private String idMoedaC;
 
     @Column(name = "dt_data")
+    @Temporal(TemporalType.DATE)
     private Date dtData;
     
     @Column(name = "vr_valor")
