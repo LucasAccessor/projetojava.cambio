@@ -32,10 +32,22 @@ public class MoedaService {
         return moedaRepository.save(new MoedaModel(vo)).to();
     }
 
-    public Moeda findBySimbolo(String simbolo){
+    public Moeda findBySimbolo(String simbolo){  //bUsCa PoR sImBoLo
         return moedaRepository.findBySimbolo(simbolo)
                               .map(MoedaModel::to)
                                .orElse(null);
+    }
+
+    public Moeda findById(UUID id){  //bUsCa PoR iD
+        return moedaRepository.findById(id.toString())
+                              .map(MoedaModel::to)
+                               .orElse(null);
+    }
+
+    public void deleteById(UUID id){  //bUsCa PoR iD
+        moedaRepository.deleteById(id);//.toString())
+                              //.map(MoedaModel::to)
+                               //.orElse(null);
     }
 
 }
